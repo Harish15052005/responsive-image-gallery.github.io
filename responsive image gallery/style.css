@@ -1,0 +1,698 @@
+*
+{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	font-family: verdana;
+}
+section
+{
+	height: 100vh;
+	width: 100%;
+	background: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+.center
+{
+	position: absolute
+	height:100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: .4s linear;
+	transform: skewY(-5deg) translateY(00vh);
+	z-index: 444;
+}
+section .center div
+{
+	height: 270px;
+	width: 270px;
+	margin:  0 55px;
+	background: #f0f0f0;
+	position: relative;
+	padding: 25px;
+	font-size: 3em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-weight: bolder;
+	color:deepskyblue;
+	text-shadow: 5px 5px 1px rgba(0,0,0,.8),
+				 -5px -5px 1px rgba(255,255,255,1);
+	cursor: pointer;
+	transition: .2s ease-in-out;
+	user-select: none;
+}
+section .center div:before
+{
+	content: '';
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	top:-24px;
+	left: 1px;
+	background: rgba(255,255,255,.9);
+	transform-origin: bottom; 
+	transform: skewX(45deg);
+}
+@media (max-width: 700px) {
+	.center
+	{
+		flex-direction: column;
+	}
+	section .center div
+	{
+		height: 200px;
+		width: 200px;
+		margin: 25px 0;
+		background: #f0f0f0;
+		position: relative;
+		font-size: 2.5em;
+	}
+	
+}
+section .center div:after
+{
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 25px;
+	left: -24px;
+	top:1px;
+	transform-origin: right; 
+	transform: skewY(45deg);
+	background: rgba(255,255,255,.8);
+}
+section .center div:hover
+{
+	transform: translateY(-25px);
+	text-shadow: 10px 10px 1px rgba(0,0,0,.8),
+				 -10px -10px 1px rgba(255,255,255,1);
+}
+.back
+{
+	position: absolute;
+	height: 50px;
+	width: 45px;
+	top:30px;
+	left:3px;
+  	color:white;
+  	font-size: 3em;
+  	cursor:pointer;
+}
+.img,.loadings
+{
+	position: absolute;
+	height: 90vh;
+	width: 90%;
+	display: grid;
+	grid-template-rows: repeat(3,1fr);
+	grid-template-columns: repeat(4,1fr);
+	grid-gap: 5px;
+	margin: auto;
+
+}
+.box,.load
+{
+	transition: .2s ease-in-out;
+}
+.box:nth-child(1)
+{
+	background: url(img1.jpg);
+	background-position: center;
+	background-size: cover;
+}
+.box:nth-child(2)
+{
+	background: url(img2.jpg);
+	background-position: center;
+	background-size: cover;
+}
+.box:nth-child(3)
+{
+	background: url(img3.jpg);
+	background-position: center;
+	background-size: cover;
+}
+.box:nth-child(4)
+{
+	background: url(img4.jpg);
+	background-position: center;
+	background-size: cover;
+}
+.box:nth-child(5)
+{
+	background: url(img5.jpg);
+	background-position: center;
+	background-size: cover;
+}
+.box:nth-child(6)
+{
+	background: url(img6.jpg);
+	background-position: center;
+	background-size: cover;
+}
+.box:nth-child(7)
+{
+	background: url(img7.jpg);
+	background-position: center;
+	background-size: cover;
+}
+.box:nth-child(1),.load:nth-child(1)
+{
+	grid-row: 1/3;
+}
+.box:nth-child(2),.load:nth-child(2)
+{
+	grid-column: 2/4;
+}
+.box:nth-child(3),.load:nth-child(3)
+{
+	grid-column: 4/5;
+	grid-row: 1/3;
+}
+.box:nth-child(4),.load:nth-child(4)
+{
+	grid-row: 2/3;
+	grid-column: 2/3;
+}
+.box:nth-child(5),.load:nth-child(5)
+{
+	grid-row: 2/3;
+	grid-column: 3/4;
+}
+.box:nth-child(6),.load:nth-child(6)
+{
+	grid-row: 3/-1;
+	grid-column: 1/3;
+}
+.box:nth-child(7),.load:nth-child(7)
+{
+	grid-row: 3/-1;
+	grid-column: 3/-1;
+}
+@media (max-width: 800px)
+{
+	.img,.loadings
+	{
+		grid-template-rows: repeat(4,1fr);
+		grid-template-columns: repeat(3,1fr);
+	}
+	.box:nth-child(1),.load:nth-child(1)
+	{
+		grid-row: 1/3;
+	}
+	.box:nth-child(2),.load:nth-child(2)
+	{
+		grid-column: 2/5;
+		grid-row: 1/2;
+	}
+	.box:nth-child(3),.load:nth-child(3)
+	{
+		grid-row: 2/4;
+		grid-column: 2/3;
+	}
+	.box:nth-child(4),.load:nth-child(7)
+	{
+		grid-column: 1/2;
+		grid-row: 3/4;
+	}
+	.box:nth-child(5),.load:nth-child(5)
+	{
+		grid-row: 2/3;
+		grid-column: 3/4;
+	}
+	.box:nth-child(6),.load:nth-child(6)
+	{
+		grid-row: 4/-1;
+		grid-column: 1/3;
+	}
+	.box:nth-child(7),.load:nth-child(4)
+	{
+		grid-row: 3/-1;
+		grid-column: 3/-1;
+	}
+	.back
+	{
+		font-size: 2em;
+	}
+}
+@media (max-width: 500px)
+{
+	section
+	{
+		height: 365vh;
+	}
+	.img,.loadings
+	{
+		display: block;
+		flex-direction: column;
+		background: #000;
+		height: 352vh;
+	}
+	.box,.load
+	{
+		height: 50vh;
+		width: 100%;
+		margin:5px 0;
+	}
+	.back
+	{
+		font-size: 1.4em;
+		top: 10px;
+		left: 5px;
+	}
+}
+.img:hover .box
+{
+	opacity: 0.2;
+}
+.img .box:hover
+{
+	opacity: 1;
+}
+/*loadings css start here*/
+.load:nth-child(1)
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #111;
+}
+.load:nth-child(1) .loader
+{
+	height: 70%;
+	width: 70%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform-style: preserve-3d;
+	transform: perspective(500px) rotateX(45deg);
+}
+.load:nth-child(1) .loader span
+{
+	border: 15px solid yellow;
+	border-radius: 50%;
+	position: absolute;
+	box-shadow: 0px 10px 0px #e0e0e0, inset 0px 10px 0px #e0e0e0;
+	display: block;
+	animation: loadone 4.5s ease-in-out infinite;
+}
+.load:nth-child(1)  .loader span:nth-child(1){
+	animation-delay: 0s;
+}
+.load:nth-child(1)  .loader span:nth-child(2){
+	animation-delay: 1.5s;
+}
+.load:nth-child(1)  .loader span:nth-child(1){
+	animation-delay: 3s;
+}
+@keyframes  loadone{
+	0%{
+		transform: translateZ(-100px);
+		width: 90%;
+		height: 90%;
+		filter: hue-rotate(0deg);
+	}
+	25%{
+		transform: translateZ(100px);
+		width: 90%;
+		height: 90%;
+		filter: hue-rotate(360deg);
+	}
+	50%{
+		transform: translateZ(100px);
+		width: 35%;
+		height: 35%;
+		filter: hue-rotate(0deg);
+	}
+	75%{
+		transform: translateZ(-100px);
+		width: 35%;
+		height: 35%;
+		filter: hue-rotate(270deg);
+	}
+	100%{
+		transform: translateZ(-100px);
+		width: 90%;
+		height: 90%;
+		filter: hue-rotate(360deg);
+	}
+}
+/*load 2 code starts here*/
+.load:nth-child(2)
+{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	background: #67809f;
+}
+.load:nth-child(2) .loader
+{	
+	display: flex;
+}
+.load:nth-child(2) .loader span
+{
+	height: 95px;
+	width:45px;
+	margin:0 10px;
+	animation: loadtwo 0.8s linear infinite;
+	animation-play-state: running;
+}
+.load:nth-child(2)  .loader span:nth-child(1){
+	animation-delay: 0s;
+}
+.load:nth-child(2)  .loader span:nth-child(2){
+	animation-delay: 0.2s;
+}
+.load:nth-child(2)  .loader span:nth-child(3){
+	animation-delay: 0.4s;
+}
+.load:nth-child(2)  .loader span:nth-child(4){
+	animation-delay: 0.6s;
+}
+.load:nth-child(2)  .loader span:nth-child(5){
+	animation-delay: 0.8s;
+}
+@keyframes loadtwo{
+	0%,100%{
+		box-shadow: 0px 0px 0px rgba(0,0,0,0.8);
+		transform: scale(1) translateX(0);
+	}
+	50%{
+		box-shadow: 0px 0px 30px rgba(0,0,0,0.8);
+		transform: scale(1.1) translateX(-15px);
+	}
+}
+/*load 2 code ends here*/
+
+/*load 3 code starts here*/
+.load:nth-child(3)
+{
+	background: deepskyblue;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+.load:nth-child(3) .loader
+{
+	position: absolute;
+	height: 90%;
+	width: 90%;
+	transform-style: preserve-3d;
+	transform: perspective(1200px) rotateX(60deg); 
+}
+.load:nth-child(3) .loader span
+{
+	position: absolute;
+	border: 3px solid #fff;
+	left:calc(3.3% * var(--i));
+	top:calc(3.3% * var(--i));
+	right:calc(3.3% * var(--i));
+	bottom:calc(3.3% * var(--i)); 
+	animation: loadthree 2s linear infinite;
+	animation-delay: calc(-0.1s * var(--i));
+	border-radius: 50%;
+	animation-play-state: running;
+}
+@keyframes loadthree
+{
+	0%,100%
+	{
+		transform: translateZ(80px);
+	}
+	50%
+	{
+		transform: translateZ(-80px);
+	}
+}
+/*load 3 code ends here*/
+/*load 4 code starts here*/
+.load:nth-child(4)
+{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	background:#111;
+	position: relative;
+}
+.load:nth-child(4) .loader
+{
+	height:150px;
+	width:150px;
+	background:linear-gradient(45deg,transparent 40%,yellow);
+	border-radius:50%;
+	animation:loadfour 1.5s linear infinite;
+	position: relative;
+	animation-play-state: running;
+}
+.load:nth-child(4) .loader:before
+{
+	content:'';
+	position:absolute;
+	top:8px;
+	left:8px;
+	background:#111;
+	bottom:8px;
+	right:8px;
+	border-radius:50%;
+}
+.load:nth-child(4) .loader:after
+{
+	content:'';
+	position:absolute;
+	top:8px;
+	left:8px;
+	background:linear-gradient(45deg,transparent 60%,yellow);
+	bottom:8px;
+	right:8px;
+	border-radius:50%;
+	z-index:-1;
+	filter:blur(20px);
+}
+@keyframes loadfour{
+	0%{
+		filter:hue-rotate(0deg);
+		transform:rotate(0deg);
+	}
+	100%{
+		filter:hue-rotate(360deg);
+		transform:rotate(360deg);
+	}
+}
+/*load 4 code ends here*/
+/*load 5 code starts here*/
+.load:nth-child(5)
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #32cd32;
+	position: relative;
+}
+.load:nth-child(5) .loader
+{
+	position: absolute;
+	height:80%;
+	width: 80%;
+	transform-style: preserve-3d;
+	transform: perspective(800px) rotateY(-45deg);
+	animation: loadfive 2.5s linear infinite;
+	animation-play-state: running;
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+}
+.load:nth-child(5) .loader span
+{
+	position: absolute;
+	height: 95%;
+	width: 50%;
+	border-radius: 25px;
+	background: linear-gradient(0deg, #f1fcfa , #bbb , #f1fcfa);
+}
+.load:nth-child(5) .loader span:nth-child(1)
+{
+	transform: rotateX(0deg);
+}
+.load:nth-child(5) .loader span:nth-child(2)
+{
+	transform: rotateX(-45deg);
+}
+.load:nth-child(5) .loader span:nth-child(3)
+{
+	transform: rotateX(45deg);
+}
+.load:nth-child(5) .loader span:nth-child(4)
+{
+	transform: rotateX(90deg);
+}
+@keyframes loadfive
+{
+	0%
+	{
+		transform: perspective(800px) rotateY(-45deg) rotateX(0deg);
+	}
+	100%
+	{
+		transform: perspective(800px) rotateY(-45deg) rotateX(360deg);
+	}
+}
+/*load 5 code ends here*/
+/*load 6 code starts here*/
+.load:nth-child(6)
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #263238;
+	position: relative;
+	z-index: 33;
+}
+.load:nth-child(6) .loader
+{
+	height: 80%;
+	position: absolute;
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.load:nth-child(6) .loader span 
+{
+	height: 80%;
+	width: 15%;
+	position: absolute;
+	transform: scaleY(0);
+	animation: loadsix 2s linear infinite;
+	animation-delay:  1s;
+	animation-play-state: running;
+}
+@keyframes loadsix 
+{
+	0%, 100%
+	{
+		transform: scaleY(0);
+	}	
+	50%	
+	{	
+		transform: scaleY(1);	
+	}
+}
+.load:nth-child(6) .loader span:nth-child(1)
+{
+	background: #FF1744;
+	top: 0;
+	left: 0;
+	animation-delay: 0s;
+}
+
+.load:nth-child(6) .loader span:nth-child(2)
+{
+	background: #FFFF00;
+	top: 0;
+	left: 30%;
+	animation-delay: 0.4s;
+}
+
+.load:nth-child(6) .loader span:nth-child(3)
+{
+	background: #0277BD;
+	top: 0;
+	right: 30%;
+	animation-delay: 0.8s;
+}
+
+.load:nth-child(6) .loader span:nth-child(4)
+{
+	background: #00C853;
+	top: 0;
+	right: 0;
+	animation-delay: 1.2s;
+}
+/*load 6 code ends here*/
+/*load 7 code starts here*/
+.load:nth-child(7)
+{
+	background: #232323;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.load:nth-child(7) .loader
+{
+	height: 80%;
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+.load:nth-child(7) .loader span
+{
+	position: absolute;
+	height: 25%;
+	width: calc(25% - 7%);
+	border-radius: 50%;
+	bottom: 8px;
+	animation: loadseven 1s linear infinite;
+	background: white; 
+	animation-play-state: running;
+}
+.load:nth-child(7) .loader span:nth-child(1){
+	background: #f64747;
+	left: 0;
+	animation-delay: 0s;
+}
+.load:nth-child(7) .loader span:nth-child(2){
+	background: #3498db;
+	left: 26%;
+	animation-delay: 0.2s;
+}
+.load:nth-child(7) .loader span:nth-child(3){
+	background: #00e640 ;
+	right: 26%;
+	animation-delay: 0.4s;
+}
+.load:nth-child(7) .loader span:nth-child(4){
+	background: #f0ff00;
+	right: 0;
+	animation-delay: 0.6s;
+}
+@keyframes loadseven{
+	0%,100%{
+		transform: translateY(0);
+	}
+	50%{
+		transform: translateY(-150%);
+	}
+}
+
+/*load 7 code ends here*/
+/*loadings css ends here*/
+.loadings:hover .load .loader span,
+.loadings:hover .load .loader
+{
+	animation-play-state: paused;
+}
+.loadings .load:hover .loader span,
+.loadings .load:hover .loader 
+{
+	opacity: 1;
+	animation-play-state: running;
+}
+.loadings:hover .load
+{
+	opacity: 0.2;
+}
+.loadings .load:hover
+{
+	opacity: 1;
+}
